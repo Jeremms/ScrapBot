@@ -1,3 +1,0 @@
-import scrapper
-
-scrapper.scrap()
