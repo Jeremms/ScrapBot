@@ -1,7 +1,6 @@
 import discord
 import os
 import datetime
-import asyncio
 from dotenv import load_dotenv
 from discord.ext import commands, tasks
 import connexion
@@ -12,8 +11,8 @@ load_dotenv()
 bot = commands.Bot(command_prefix="!", intents=discord.Intents.all())
 
 # Heure cible (modifier ici)
-TARGET_HOUR = 20  # 15h (heure en 24h)
-TARGET_MINUTE = 7  # 30 minutes
+TARGET_HOUR = 11 
+TARGET_MINUTE = 12
 
 @bot.event
 async def on_ready():
@@ -29,7 +28,7 @@ async def scraping_loop():
     now = datetime.datetime.now()
     if now.hour == TARGET_HOUR and now.minute == TARGET_MINUTE:
         print("Lancement du scraping...")
-        connexion.connect('trading.jerem@gmail.com', 'test_scrap')
+        connexion.connect(os.getenv('LOG'),os.getenv('PWD'))
         data = scrapper.launch()
         channel = bot.get_channel(1337136881791537222)  # Remplace par l'ID de ton channel Discord
         if channel:

@@ -4,16 +4,6 @@ import requests
 login_url = "https://menthorq.com/login/"
 base_url = "https://menthorq.com/account/"
 
-# Informations de connexion (remplace avec tes identifiants)
-payload = {
-    "log": "trading.jerem@gmail.com",
-    "pwd": "test_scrap",
-    "wp-submit": "Log In",
-    "redirect_to": "/account/",
-    "mepr_process_login_form": "true",
-    "mepr_is_login_page": "false",
-}
-
 def connect(log, pwd):
     payload = {
         "log": log,
