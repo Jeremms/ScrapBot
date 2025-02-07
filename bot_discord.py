@@ -11,8 +11,8 @@ load_dotenv()
 bot = commands.Bot(command_prefix="!", intents=discord.Intents.all())
 
 # Heure cible (modifier ici)
-TARGET_HOUR = 11 
-TARGET_MINUTE = 12
+TARGET_HOUR = 9 
+TARGET_MINUTE = 0
 
 @bot.event
 async def on_ready():
